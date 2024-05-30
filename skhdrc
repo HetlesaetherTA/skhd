@@ -1,0 +1,46 @@
+#  -- Open Applications
+
+# open terminal
+cmd - return : alacritty
+
+# -- Changing Window Focus & Orientation --
+
+# change window focus within space
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+
+# swap windows
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - h : yabai -m window --swap west
+shift + alt - l : yabai -m window --swap east
+
+# change focus between external displays (left and right)
+alt - s: yabai -m display --focus west
+alt - g: yabai -m display --focus east
+
+# flip along y-axis
+shift + alt - y : yabai -m space --mirror y-axis
+
+# flip along x-axis
+shift + alt - x : yabai -m space --mirror x-axis
+
+# roate screen 90 degrees
+alt - r : yabai -m space --rotate 90
+
+# toggle window float
+shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# maximize a window
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# -- Starting/Stopping/Restarting Services --
+
+# restart skhd
+cmd - r : skhd -reloada
+
+# stop/start/restart yabai
+cmd + shift - q : brew services stop yabai
+cmd + shift - r : yabai --restart-service
